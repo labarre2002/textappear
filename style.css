@@ -1,0 +1,118 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    font-size: 16px;
+}
+
+.content{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+   grid-template-areas: ". first . . . ."
+                         ". un . . . . "
+                         ". . . . . deux"
+                         ". trois . . . .";
+    grid-template-columns: repeat(6, 1fr);  
+    grid-template-rows: repeat(4, 1fr);   
+    padding-top: 25px;               
+}
+
+
+.zero{
+    grid-area:first;
+    margin-left: 5px;
+    padding-left: 90px;
+   height: 95px;
+    overflow: hidden;
+  }
+
+.un{
+    grid-area: un;
+    overflow: hidden;
+    width: 790px;
+    height: 95px;
+   }
+
+.un p{
+animation: slideRight 8s cubic-bezier(0.165,0.84,0.44,1) forwards;
+animation-delay: 1.7s;
+}
+.zero p{
+    animation: slideLeft 8s cubic-bezier(0.165,0.84,0.44,1) forwards;
+    animation-delay: 1.9s;
+}
+
+@keyframes slideLeft{
+    0%{
+        transform: translateY(100%);
+      }
+       45%{
+         transform: translateY(0px);
+      }
+      100%{
+          transform: translateX(-51px);
+      }
+     
+  }  
+
+
+@keyframes slideRight{
+    0%{
+      transform: translateY(100%);
+    }
+     50%{
+       transform: translateY(0px);
+    }
+    100%{
+        transform: translateX(340px);
+    }
+    
+}
+
+
+
+
+.deux{
+    grid-area: deux;
+    margin-right: 5px;
+    width: 400px;
+    height: 95px;
+    overflow: hidden;
+  
+}
+.trois{
+    position: relative;
+    grid-area: trois;
+    margin-left: 62px;
+    width: 650px;
+    height: 95px;
+    overflow: hidden;
+   
+}
+p{
+    font-size: 6em;
+    text-transform: uppercase;
+    font-family: verdana;
+    line-height:1;
+    transform: translateY(100%);
+    animation: slideUp 1s cubic-bezier(0.165,0.84,0.44,1) forwards;
+     animation-delay: 2.7s;
+}
+
+
+@keyframes slideUp{
+    0%{
+        transform: translateY(100%); 
+    }
+    100%{
+        transform: translateY(0);
+     }
+    
+}
+
+
+
